@@ -94,6 +94,9 @@
         <DataProperty IRI="#hasObjectID"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasSpeed"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#close_to"/>
     </Declaration>
     <Declaration>
@@ -262,6 +265,9 @@
     <FunctionalDataProperty>
         <DataProperty IRI="#hasObjectID"/>
     </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasSpeed"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#absoluteTime"/>
         <Class IRI="#Frame"/>
@@ -278,6 +284,10 @@
         <DataProperty IRI="#hasObjectID"/>
         <Class IRI="#Object"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpeed"/>
+        <Class IRI="#MovingObject"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#absoluteTime"/>
         <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
@@ -293,6 +303,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#hasObjectID"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpeed"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 </Ontology>
 
