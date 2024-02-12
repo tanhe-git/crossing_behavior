@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl">
+    <Prefix name="" IRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Behavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bicyclist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crossing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CrossingArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeavyVehicle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftSidewalk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightVehicle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MovingObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonZebraCrossing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pedestrian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightSidewalk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sidewalk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialRelationship"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StaticObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containsInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFrame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObject1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObject2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpatialRelationship"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#absoluteTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#coordinate_X"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#coordinate_Y"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasObjectID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#close_to"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#far_away"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#left_close_to"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#left_far_away"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#out_of_crossing_area"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#right_close_to"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#right_far_away"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Area"/>
+        <Class IRI="#StaticObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bicyclist"/>
+        <Class IRI="#MovingObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crossing"/>
+        <Class IRI="#StaticObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CrossingArea"/>
+        <Class IRI="#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeavyVehicle"/>
+        <Class IRI="#MovingObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeftSidewalk"/>
+        <Class IRI="#Sidewalk"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightVehicle"/>
+        <Class IRI="#MovingObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MovingObject"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonZebraCrossing"/>
+        <Class IRI="#Crossing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pedestrian"/>
+        <Class IRI="#MovingObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightSidewalk"/>
+        <Class IRI="#Sidewalk"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sidewalk"/>
+        <Class IRI="#StaticObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticObject"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#close_to"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#far_away"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#left_close_to"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#left_far_away"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#on"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#out_of_crossing_area"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#right_close_to"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpatialRelationship"/>
+        <NamedIndividual IRI="#right_far_away"/>
+    </ClassAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasObject1"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasObject2"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSpatialRelationship"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsInteraction"/>
+        <Class IRI="#Frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFrame"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObject1"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObject2"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpatialRelationship"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsInteraction"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFrame"/>
+        <Class IRI="#Frame"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObject1"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObject2"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpatialRelationship"/>
+        <Class IRI="#SpatialRelationship"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#absoluteTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#coordinate_X"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#coordinate_Y"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasObjectID"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#absoluteTime"/>
+        <Class IRI="#Frame"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coordinate_X"/>
+        <Class IRI="#MovingObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#coordinate_Y"/>
+        <Class IRI="#MovingObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasObjectID"/>
+        <Class IRI="#Object"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#absoluteTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#coordinate_X"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#coordinate_Y"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasObjectID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
