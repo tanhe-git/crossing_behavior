@@ -52,6 +52,9 @@
         <Class IRI="#Object"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ObjectInfo"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Pedestrian"/>
     </Declaration>
     <Declaration>
@@ -76,7 +79,13 @@
         <ObjectProperty IRI="#hasObject1"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasObject1Info"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasObject2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObject2Info"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSpatialRelationship"/>
@@ -94,7 +103,7 @@
         <DataProperty IRI="#hasObjectID"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasSpeed"/>
+        <DataProperty IRI="#speed"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#close_to"/>
@@ -208,7 +217,13 @@
         <ObjectProperty IRI="#hasObject1"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasObject1Info"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasObject2"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasObject2Info"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSpatialRelationship"/>
@@ -226,7 +241,15 @@
         <Class IRI="#Interaction"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObject1Info"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasObject2"/>
+        <Class IRI="#Interaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObject2Info"/>
         <Class IRI="#Interaction"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -246,8 +269,16 @@
         <Class IRI="#Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObject1Info"/>
+        <Class IRI="#ObjectInfo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasObject2"/>
         <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObject2Info"/>
+        <Class IRI="#ObjectInfo"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSpatialRelationship"/>
@@ -266,7 +297,7 @@
         <DataProperty IRI="#hasObjectID"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#hasSpeed"/>
+        <DataProperty IRI="#speed"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#absoluteTime"/>
@@ -274,19 +305,19 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#coordinate_X"/>
-        <Class IRI="#MovingObject"/>
+        <Class IRI="#ObjectInfo"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#coordinate_Y"/>
-        <Class IRI="#MovingObject"/>
+        <Class IRI="#ObjectInfo"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasObjectID"/>
         <Class IRI="#Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasSpeed"/>
-        <Class IRI="#MovingObject"/>
+        <DataProperty IRI="#speed"/>
+        <Class IRI="#ObjectInfo"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#absoluteTime"/>
@@ -305,7 +336,7 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasSpeed"/>
+        <DataProperty IRI="#speed"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 </Ontology>
