@@ -5,7 +5,8 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl">
+     ontologyIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
+     versionIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl/1.1.0">
     <Prefix name="" IRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -58,6 +59,9 @@
         <Class IRI="#Pedestrian"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Precipitation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RightSidewalk"/>
     </Declaration>
     <Declaration>
@@ -68,6 +72,21 @@
     </Declaration>
     <Declaration>
         <Class IRI="#StaticObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrafficFlow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Visibility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeatherCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WindSpeed"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#containsInteraction"/>
@@ -89,6 +108,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSpatialRelationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTrafficFlow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWeatherCondition"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#absoluteTime"/>
@@ -170,6 +195,10 @@
         <Class IRI="#MovingObject"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Precipitation"/>
+        <Class IRI="#WeatherCondition"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RightSidewalk"/>
         <Class IRI="#Sidewalk"/>
     </SubClassOf>
@@ -181,38 +210,18 @@
         <Class IRI="#StaticObject"/>
         <Class IRI="#Object"/>
     </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#close_to"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#far_away"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#left_close_to"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#left_far_away"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#on"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#out_of_crossing_area"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#right_close_to"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#right_far_away"/>
-    </ClassAssertion>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#WeatherCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visibility"/>
+        <Class IRI="#WeatherCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WindSpeed"/>
+        <Class IRI="#WeatherCondition"/>
+    </SubClassOf>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasObject1"/>
     </FunctionalObjectProperty>
@@ -256,6 +265,14 @@
         <ObjectProperty IRI="#hasSpatialRelationship"/>
         <Class IRI="#Interaction"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTrafficFlow"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWeatherCondition"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#containsInteraction"/>
         <Class IRI="#Interaction"/>
@@ -283,6 +300,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSpatialRelationship"/>
         <Class IRI="#SpatialRelationship"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTrafficFlow"/>
+        <Class IRI="#TrafficFlow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWeatherCondition"/>
+        <Class IRI="#WeatherCondition"/>
     </ObjectPropertyRange>
     <FunctionalDataProperty>
         <DataProperty IRI="#absoluteTime"/>
@@ -335,13 +360,44 @@
         <DataProperty IRI="#hasObjectID"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#speed"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Precipitation</IRI>
+        <Literal>Float, mm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpatialRelationship</IRI>
+        <Literal>E.g., &quot;close_to&quot;, &quot;far_away&quot;, &quot;out_of_area&quot;, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Temperature</IRI>
+        <Literal>float, °C</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrafficFlow</IRI>
+        <Literal>Normal, Low, VeryLow, High, VeryHigh</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Visibility</IRI>
+        <Literal>VeryLow, Low, Normal, High, VeryHigh</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WeatherCondition</IRI>
+        <Literal>Rain, Snow, Wind, Hail, Fog, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WindSpeed</IRI>
+        <Literal>float, km/h</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
