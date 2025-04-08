@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
-     versionIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl/1.1.0">
+     versionIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl/1.2.0">
     <Prefix name="" IRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -38,9 +38,6 @@
         <Class IRI="#Interaction"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LeftSidewalk"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#LightVehicle"/>
     </Declaration>
     <Declaration>
@@ -59,9 +56,6 @@
         <Class IRI="#Pedestrian"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RightSidewalk"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Sidewalk"/>
     </Declaration>
     <Declaration>
@@ -71,10 +65,10 @@
         <Class IRI="#StaticObject"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TrafficFlow"/>
+        <Class IRI="#WeatherCondition"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WeatherCondition"/>
+        <Class IRI="#ZebraCrossing"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#containsInteraction"/>
@@ -98,9 +92,6 @@
         <ObjectProperty IRI="#hasSpatialRelationship"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTrafficFlow"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasWeatherCondition"/>
     </Declaration>
     <Declaration>
@@ -119,19 +110,22 @@
         <DataProperty IRI="#hasObjectID"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasPrecipitation"/>
+        <DataProperty IRI="#hasTrafficFlow"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasTemperature"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasVisibility"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasWindSpeed"/>
+        <DataProperty IRI="#precipitation"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#speed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#temperature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#visibility"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#windSpeed"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#close_to"/>
@@ -166,10 +160,6 @@
         <Class IRI="#MovingObject"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LeftSidewalk"/>
-        <Class IRI="#Sidewalk"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#LightVehicle"/>
         <Class IRI="#MovingObject"/>
     </SubClassOf>
@@ -186,16 +176,16 @@
         <Class IRI="#MovingObject"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#RightSidewalk"/>
         <Class IRI="#Sidewalk"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sidewalk"/>
-        <Class IRI="#StaticObject"/>
+        <Class IRI="#Area"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#StaticObject"/>
         <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZebraCrossing"/>
+        <Class IRI="#Crossing"/>
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#SpatialRelationship"/>
@@ -257,10 +247,6 @@
         <Class IRI="#Interaction"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTrafficFlow"/>
-        <Class IRI="#Behavior"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWeatherCondition"/>
         <Class IRI="#Behavior"/>
     </ObjectPropertyDomain>
@@ -293,10 +279,6 @@
         <Class IRI="#SpatialRelationship"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTrafficFlow"/>
-        <Class IRI="#TrafficFlow"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWeatherCondition"/>
         <Class IRI="#WeatherCondition"/>
     </ObjectPropertyRange>
@@ -336,24 +318,28 @@
         <Class IRI="#Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasPrecipitation"/>
-        <Class IRI="#WeatherCondition"/>
+        <DataProperty IRI="#hasTrafficFlow"/>
+        <Class IRI="#Behavior"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasTemperature"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasVisibility"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasWindSpeed"/>
+        <DataProperty IRI="#precipitation"/>
         <Class IRI="#WeatherCondition"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#speed"/>
         <Class IRI="#ObjectInfo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#temperature"/>
+        <Class IRI="#WeatherCondition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#visibility"/>
+        <Class IRI="#WeatherCondition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#windSpeed"/>
+        <Class IRI="#WeatherCondition"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#absoluteTime"/>
@@ -361,11 +347,11 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#coordinate_X"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#coordinate_Y"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasDescription"/>
@@ -376,30 +362,33 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasPrecipitation"/>
+        <DataProperty IRI="#hasTrafficFlow"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#precipitation"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasTemperature"/>
+        <DataProperty IRI="#speed"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#temperature"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasVisibility"/>
+        <DataProperty IRI="#visibility"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasWindSpeed"/>
+        <DataProperty IRI="#windSpeed"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SpatialRelationship</IRI>
         <Literal>E.g., &quot;close_to&quot;, &quot;far_away&quot;, &quot;out_of_area&quot;, etc.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TrafficFlow</IRI>
-        <Literal>Normal, Low, VeryLow, High, VeryHigh</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -410,5 +399,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
