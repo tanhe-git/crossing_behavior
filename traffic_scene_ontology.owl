@@ -1,401 +1,414 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
      xml:base="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"
-     versionIRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl/1.2.0">
-    <Prefix name="" IRI="http://www.daimond.com/ontology/traffic_scene_ontology.owl"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class IRI="#Area"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Behavior"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Bicyclist"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Crossing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CrossingArea"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Frame"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HeavyVehicle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Interaction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LightVehicle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MovingObject"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NonZebraCrossing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Object"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ObjectInfo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pedestrian"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sidewalk"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SpatialRelationship"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StaticObject"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WeatherCondition"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ZebraCrossing"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#containsInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasFrame"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasObject1"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasObject1Info"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasObject2"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasObject2Info"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSpatialRelationship"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasWeatherCondition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#absoluteTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#coordinate_X"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#coordinate_Y"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasObjectID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasTrafficFlow"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#precipitation"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#speed"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#temperature"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#visibility"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#windSpeed"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#close_to"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#far_away"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#on"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#out_of_crossing_area"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#Area"/>
-        <Class IRI="#StaticObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Bicyclist"/>
-        <Class IRI="#MovingObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Crossing"/>
-        <Class IRI="#StaticObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CrossingArea"/>
-        <Class IRI="#Area"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#HeavyVehicle"/>
-        <Class IRI="#MovingObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LightVehicle"/>
-        <Class IRI="#MovingObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MovingObject"/>
-        <Class IRI="#Object"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NonZebraCrossing"/>
-        <Class IRI="#Crossing"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pedestrian"/>
-        <Class IRI="#MovingObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sidewalk"/>
-        <Class IRI="#Area"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StaticObject"/>
-        <Class IRI="#Object"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ZebraCrossing"/>
-        <Class IRI="#Crossing"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#close_to"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#far_away"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#on"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SpatialRelationship"/>
-        <NamedIndividual IRI="#out_of_crossing_area"/>
-    </ClassAssertion>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasObject1"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasObject1Info"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasObject2"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasObject2Info"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasSpatialRelationship"/>
-    </FunctionalObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#containsInteraction"/>
-        <Class IRI="#Frame"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasFrame"/>
-        <Class IRI="#Behavior"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObject1"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObject1Info"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObject2"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObject2Info"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSpatialRelationship"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasWeatherCondition"/>
-        <Class IRI="#Behavior"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#containsInteraction"/>
-        <Class IRI="#Interaction"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasFrame"/>
-        <Class IRI="#Frame"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasObject1"/>
-        <Class IRI="#Object"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasObject1Info"/>
-        <Class IRI="#ObjectInfo"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasObject2"/>
-        <Class IRI="#Object"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasObject2Info"/>
-        <Class IRI="#ObjectInfo"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSpatialRelationship"/>
-        <Class IRI="#SpatialRelationship"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasWeatherCondition"/>
-        <Class IRI="#WeatherCondition"/>
-    </ObjectPropertyRange>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#absoluteTime"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#coordinate_X"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#coordinate_Y"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasObjectID"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#speed"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty IRI="#absoluteTime"/>
-        <Class IRI="#Frame"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#coordinate_X"/>
-        <Class IRI="#ObjectInfo"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#coordinate_Y"/>
-        <Class IRI="#ObjectInfo"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDescription"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasObjectID"/>
-        <Class IRI="#Object"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasTrafficFlow"/>
-        <Class IRI="#Behavior"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#precipitation"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#speed"/>
-        <Class IRI="#ObjectInfo"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#temperature"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#visibility"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#windSpeed"/>
-        <Class IRI="#WeatherCondition"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#absoluteTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#coordinate_X"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#coordinate_Y"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDescription"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasObjectID"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasTrafficFlow"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#precipitation"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#speed"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#temperature"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#visibility"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#windSpeed"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SpatialRelationship</IRI>
-        <Literal>E.g., &quot;close_to&quot;, &quot;far_away&quot;, &quot;out_of_area&quot;, etc.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#WeatherCondition</IRI>
-        <Literal>Rain, Snow, Wind, Hail, Fog, etc.</Literal>
-    </AnnotationAssertion>
-</Ontology>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl">
+        <owl:versionIRI rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl/1.2.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#containsInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#containsInteraction">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Frame"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasFrame -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasFrame">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Behavior"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Frame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject1Info -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject1Info">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject2Info -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObject2Info">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasSpatialRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasSpatialRelationship">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasWeatherCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasWeatherCondition">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Behavior"/>
+        <rdfs:range rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#absoluteTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#absoluteTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Frame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#coordinate_X -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#coordinate_X">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#coordinate_Y -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#coordinate_Y">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasDescription">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObjectID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasObjectID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasTrafficFlow -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#hasTrafficFlow">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Behavior"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#precipitation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#precipitation">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#speed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#speed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#temperature">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#visibility -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#visibility">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#windSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#windSpeed">
+        <rdfs:domain rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Area -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Area">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#StaticObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Behavior -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Behavior"/>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Bicyclist -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Bicyclist">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Crossing -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Crossing">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#StaticObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#CrossingArea -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#CrossingArea">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Frame -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Frame"/>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#HeavyVehicle -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#HeavyVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Interaction"/>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#LightVehicle -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#LightVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#NonZebraCrossing -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#NonZebraCrossing">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Crossing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ObjectInfo"/>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Pedestrian -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Pedestrian">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#Sidewalk -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Sidewalk">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship">
+        <rdfs:comment>E.g., &quot;close_to&quot;, &quot;far_away&quot;, &quot;out_of_area&quot;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#StaticObject -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#StaticObject">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#WeatherCondition">
+        <rdfs:comment>Rain, Snow, Wind, Hail, Fog, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#ZebraCrossing -->
+
+    <owl:Class rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#ZebraCrossing">
+        <rdfs:subClassOf rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#Crossing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#close_to -->
+
+    <owl:NamedIndividual rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#close_to">
+        <rdf:type rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#far_away -->
+
+    <owl:NamedIndividual rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#far_away">
+        <rdf:type rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#on -->
+
+    <owl:NamedIndividual rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#on">
+        <rdf:type rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.daimond.com/ontology/traffic_scene_ontology.owl#out_of_area -->
+
+    <owl:NamedIndividual rdf:about="http://www.daimond.com/ontology/traffic_scene_ontology.owl#out_of_area">
+        <rdf:type rdf:resource="http://www.daimond.com/ontology/traffic_scene_ontology.owl#SpatialRelationship"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
 
 
 
